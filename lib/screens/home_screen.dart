@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/screens/add_screen.dart';
+import 'package:flutter_application_2/screens/no_return_screen.dart';
+import 'package:flutter_application_2/screens/profile_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,6 +21,13 @@ class HomeScreen extends StatelessWidget {
             ),
             onPressed: () {
               print("Coucou les devs");
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProfileScreen(),
+                ),
+              );
             },
           ),
         ],
@@ -49,7 +59,15 @@ class HomeScreen extends StatelessWidget {
             ),
             const Text("Coucou les devs"),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NoReturnScreen(),
+                  ),
+                  (route) => false,
+                );
+              },
               child: const Text("Coucou les devs 2"),
             ),
           ],
@@ -65,7 +83,17 @@ class HomeScreen extends StatelessWidget {
       //   ),
       // ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          print("Action add Screen");
+
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddScreen(),
+              fullscreenDialog: true,
+            ),
+          );
+        },
         child: const Icon(
           Icons.add,
         ),
