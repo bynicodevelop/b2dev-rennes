@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/screens/home_screen.dart';
+import 'package:flutter_application_2/screens/home_flutur_builder_screen.dart';
 
 void main() {
   runApp(const App());
@@ -13,7 +13,8 @@ class App extends StatelessWidget {
     return const MaterialApp(
       title: 'Mon App',
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      // home: HomeScreen(),
+      home: HomeFuturBuilderScreen(),
     );
   }
 }
